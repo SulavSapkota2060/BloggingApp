@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'on53)!jomuaaxh^$gpn_j-wn37f86(^&(faoyayk_#u*)()32@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['sulavsapkota.herokuapp.com','127.0.0.1']
-
+#ALLOWED_HOSTS = ['sulavsapkota.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'myPost.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd1etakpgg6c8lj',
-        'USER': 'gnouamtpsmfenm',
-        'PASSWORD': '97492ad9d6565a86f674a09f87ecaaaa7246b2143ac81aa3b4fa3f4c9c3e9daa',
-        'HOST': 'ec2-52-72-65-76.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'MyDB',                      # Or path to database file if using sqlite3.
+        'USER': 'postgres',                      # Not used with sqlite3.
+        'PASSWORD': 'buildingwebapp',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -128,10 +128,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/static/images/'
+MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'staticfiles/')
+MEDIA_ROOT = os.path.join(BASE_DIR,'/static/images/')
